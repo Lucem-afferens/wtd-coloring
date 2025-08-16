@@ -20,6 +20,7 @@
         // top: 50%;
         // left: 50%;
         position: absolute;
+        opacity: .8;
         // transform: translate(-50%, -50%);
         img {
             width: 100%;
@@ -50,7 +51,7 @@
 
 @keyframes audio-btn {
     from {
-        opacity: 1;
+        opacity: .8;
         transform: scale(1) ;
     }
     to {
