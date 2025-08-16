@@ -1,0 +1,50 @@
+.calendar {
+    padding-top: 80px;
+    min-height: 450px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        position: relative;
+
+    }
+    &__table {
+        width: 100%;
+        max-width: 450px;
+        height: 300px;
+        max-height: 450px;
+        font-size: clamp(16px, 4vw, 30px);
+        position: relative;
+        margin: 0 auto;
+        th {
+            font-style: italic;  
+        }
+    }
+    &__number {
+        width: auto;
+        height: auto;
+        position: relative;
+        color: #50dc5e;
+        font-weight: 700;
+        font-size: clamp(18px, 4vw, 32px);
+    }
+    &__heart {
+        width: 150%;
+        object-fit: scale-down;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        z-index: -1;
+        opacity: .6;
+        img {
+            max-width: 100%;
+        }
+    }
+}

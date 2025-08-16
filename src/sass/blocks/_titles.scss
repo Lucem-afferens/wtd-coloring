@@ -1,0 +1,287 @@
+/* Анимация плавного рукописного движения */
+@keyframes draw {
+    from { stroke-dashoffset: 800; }
+    to   { stroke-dashoffset: 0; }
+  }
+  
+  /* Имитация нажима пера — чуть плавнее и синхронно с основным движением */
+  @keyframes pressure {
+    0%, 100% { stroke-width: 1.8; }
+    25%      { stroke-width: 2.4; }
+    50%      { stroke-width: 2.1; }
+    75%      { stroke-width: 3; }
+  }
+.title {
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 60px;
+    &_main {
+        padding-top: 3vh;
+        font-style: italic;
+        margin: 0 auto;
+        width: clamp(240px, 40vw, 400px);
+        color: #000;
+        svg {
+            overflow: visible;
+            padding: 10px;
+            width: 100%;
+            text {
+                font-family: $font-main;
+                letter-spacing: 3px;
+                max-width: 100%;
+                stroke-dasharray: 800;             /* длина контура */
+                stroke-dashoffset: 800;            /* скрыть весь текст */
+                stroke-linecap: round;             /* плавные концы штриха */
+                stroke-linejoin: round;            /* плавные углы */
+                animation:
+                draw 5s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+                pressure 5s ease-in-out forwards;
+            }
+        }
+    }
+    &_invite {
+        overflow: visible;
+        width: clamp(240px, 40vw, 400px);
+        margin: 5% auto;
+        svg {
+            overflow: visible;
+            text {
+                font-size: 70px;
+                height: auto;
+                overflow: visible;
+                // letter-spacing: 5px;
+                stroke-dasharray: 0;             /* длина контура */
+                stroke-dashoffset: 0;            /* показать весь текст */
+                stroke-linecap: round;             /* плавные концы штриха */
+                stroke-linejoin: round;            /* плавные углы */
+                tspan {
+                    font-family: $font-cursive;
+
+                }
+            }
+        }
+        &-date {
+            overflow: visible;
+            width: clamp(240px, 40vw, 400px);
+            margin: 0 auto;
+            svg {
+                overflow: visible;
+                text {
+                    font-size: 70px;
+                    height: auto;
+                    overflow: visible;
+                    // letter-spacing: 5px;
+                    stroke-dasharray: 0;             /* длина контура */
+                    stroke-dashoffset: 0;            /* показать весь текст */
+                    stroke-linecap: round;             /* плавные концы штриха */
+                    stroke-linejoin: round;            /* плавные углы */
+                    font-family: $font-cursive;
+                }
+            }
+        }
+    }
+    &_programm {
+        margin-top: 40px;
+    }
+    &_footer {
+        color: #fff;
+        // text-shadow: 2px 2px 5px #ac3b61;
+        font-size: clamp(38px, 4vw, 80px);
+    }
+    &_path {
+        overflow: visible;
+        width: clamp(240px, 50vw, 500px);
+        margin: 0 auto;
+        svg {
+            overflow: visible;
+            text {
+                font-size: 70px;
+                height: auto;
+                overflow: visible;
+                // letter-spacing: 5px;
+                stroke-dasharray: 0;             /* длина контура */
+                stroke-dashoffset: 0;            /* показать весь текст */
+                stroke-linecap: round;             /* плавные концы штриха */
+                stroke-linejoin: round;            /* плавные углы */
+                font-family: $font-cursive;
+            }
+        }
+    }
+    &_countdown {
+        text-align: center;
+        text-wrap: pretty; 
+        transform: translateY(20px);
+        font-size: clamp(30px, 4vw, 48px);
+        overflow: visible;
+        width: clamp(220px, 40vw, 400px);
+        margin: 8% auto;
+        svg {
+            overflow: visible;
+            text {
+                font-size: 70px;
+                height: auto;
+                overflow: visible;
+                // letter-spacing: 5px;
+                stroke-dasharray: 0;             /* длина контура */
+                stroke-dashoffset: 0;            /* показать весь текст */
+                stroke-linecap: round;             /* плавные концы штриха */
+                stroke-linejoin: round;            /* плавные углы */
+                tspan {
+                    font-family: $font-cursive;
+                    overflow: visible;
+                }
+            }
+        }
+    }
+    &_calendar {
+        overflow: visible;
+        width: clamp(240px, 50vw, 500px);
+        margin: 2% auto;
+        svg {
+            overflow: visible;
+            text {
+                font-size: 70px;
+                height: auto;
+                overflow: visible;
+                // letter-spacing: 5px;
+                stroke-dasharray: 0;             /* длина контура */
+                stroke-dashoffset: 0;            /* показать весь текст */
+                stroke-linecap: round;             /* плавные концы штриха */
+                stroke-linejoin: round;            /* плавные углы */
+                font-family: $font-cursive;
+            }
+        }
+    }
+    &_programm {
+        overflow: visible;
+        width: clamp(240px, 50vw, 500px);
+        margin: 2% auto;
+        margin-top: 10%;
+        svg {
+            overflow: visible;
+            text {
+                font-size: 70px;
+                height: auto;
+                overflow: visible;
+                // letter-spacing: 5px;
+                stroke-dasharray: 0;             /* длина контура */
+                stroke-dashoffset: 0;            /* показать весь текст */
+                stroke-linecap: round;             /* плавные концы штриха */
+                stroke-linejoin: round;            /* плавные углы */
+                font-family: $font-cursive;
+            }
+        }
+    }
+    &_wishes {
+        overflow: visible;
+        width: clamp(240px, 50vw, 500px);
+        margin: 2% auto;
+        margin-top: 10%;
+        svg {
+            overflow: visible;
+            text {
+                font-size: 70px;
+                height: auto;
+                overflow: visible;
+                // letter-spacing: 5px;
+                stroke-dasharray: 0;             /* длина контура */
+                stroke-dashoffset: 0;            /* показать весь текст */
+                stroke-linecap: round;             /* плавные концы штриха */
+                stroke-linejoin: round;            /* плавные углы */
+                font-family: $font-cursive;
+            }
+        }
+    }
+    &_form {
+        overflow: visible;
+        width: clamp(240px, 50vw, 500px);
+        margin: 2% auto;
+        margin-top: 10%;
+        svg {
+            overflow: visible;
+            text {
+                font-size: 70px;
+                height: auto;
+                overflow: visible;
+                // letter-spacing: 5px;
+                stroke-dasharray: 0;             /* длина контура */
+                stroke-dashoffset: 0;            /* показать весь текст */
+                stroke-linecap: round;             /* плавные концы штриха */
+                stroke-linejoin: round;            /* плавные углы */
+                font-family: $font-cursive;
+            }
+        }
+    }
+    &_footer {
+        width: 100%;
+        text-align: center;
+        text-wrap: pretty; 
+        transform: translateY(20px);
+        font-size: 60px;
+        overflow: visible;
+        width: clamp(240px, 40vw, 400px);
+        margin: 0 auto;
+        svg {
+            overflow: visible;
+            text {
+                font-size: 60px;
+                height: auto;
+                overflow: visible;
+                // letter-spacing: 5px;
+                stroke-dasharray: 0;             /* длина контура */
+                stroke-dashoffset: 0;            /* показать весь текст */
+                stroke-linecap: round;             /* плавные концы штриха */
+                stroke-linejoin: round;            /* плавные углы */
+                tspan {
+                    font-family: $font-cursive;
+                    overflow: visible;
+                }
+            }
+        }
+    }
+}
+
+.descr {
+    font-size: clamp(14px, 4vw, 22px);    
+    text-transform: uppercase;
+    line-height: 1.5em;
+    text-align: center;
+    overflow: visible;
+    max-width: 90%;
+    letter-spacing: 2px;
+    &_invite {
+        width: 100%;
+        margin: 0 auto;
+        // font-size: clamp(16px, 5vw, 34px);
+
+    }
+    &_programm {
+        span {
+            font-size: 18px;
+            text-transform: uppercase;
+            font-style: normal;
+            font-weight: 600;
+        }
+        font-size: 14px;
+        font-style: italic;
+        text-transform: none;
+        font-weight: 400;
+    }
+    &_footer {
+        font-size: 16px;
+    }
+    &_location {
+        margin-bottom: 20px;
+        line-height: 2em;
+    }
+    &_restaurant {
+        margin-bottom: 20px;
+        line-height: 2em;
+    }
+}
+
+.font-vibe {
+    font-family: $font-main;
+    font-size: clamp(16px, 3vw, 30px);
+
+}

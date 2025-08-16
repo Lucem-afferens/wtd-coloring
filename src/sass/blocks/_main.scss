@@ -1,0 +1,120 @@
+.main {
+    height: 100vh;
+    height: 100lvh;
+    min-height: 600px;
+    // max-height: 900px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    &__img {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: url('/img/bg_people_main.webp') 50%/cover no-repeat;
+        background-position: 50% 20%;
+        filter: brightness(50%);
+    }
+    &__link {
+        display: block;
+        position: absolute;
+        width: clamp(290px, 50vw, 400px);
+        font-size: clamp(16px, 5vw, 24px);
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid rgba(240, 240, 240, .6);
+        padding: 20px 10px;
+        border-radius: 40px;
+        background: rgba(0, 0, 0, .3);
+        a {
+            width: 100%;
+            height: 100%;
+            color: rgba(240, 240, 240, .6);
+            text-decoration: none;
+        }
+    }
+    &__text {
+        display: block;
+        width: 80%;
+        max-width: 500px;
+        text-align: center;
+        font-size: clamp(14px, 4vw, 22px);
+        color: #e1eee1;
+    }
+    &__date {
+        padding: 5px;
+        color: #000;
+        margin: 0 auto;
+        width: clamp(300px, 50vw, 400px);
+        font-size: 40px;
+        height: 90px;
+        svg {
+            overflow: visible;
+            padding: 10px;
+            width: 100%;
+            text {
+                font-family: $font-cursive;
+                letter-spacing: 5px;
+                max-width: 100%;
+                stroke-dasharray: 800;             /* длина контура */
+                stroke-dashoffset: 800;            /* скрыть весь текст */
+                stroke-linecap: round;             /* плавные концы штриха */
+                stroke-linejoin: round;            /* плавные углы */
+                animation:
+                draw 4s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+                pressure 4s ease-in-out forwards;
+            }
+        }
+    }
+    &__letters {
+        width: clamp(180px, 30vw, 300px);
+        img {
+            max-width: 100%;
+        }
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0 auto;
+        align-items: center;
+        bottom: 15px;
+        // gap: 5px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        z-index: 4;
+    }
+    @keyframes arrow {
+        from {
+            bottom: 5px;
+        }
+        to {
+            bottom: 15px;
+        }
+    }
+    &__arrow {
+        position: absolute;
+        opacity: 1;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-name: arrow;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in;
+        transition: opacity 0.5s;
+        .visible {
+            opacity: 1;
+        }
+        &:not(.visible) {
+            opacity: 0;
+        }
+    }
+
+}
